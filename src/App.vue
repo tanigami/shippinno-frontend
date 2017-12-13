@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+    <router-link :to="'/'">Home</router-link>
+
+    <button v-if="!authenticated" @click="login()">Login</button>
+    <button v-else @click="logout">Logout</button>
+
     <nav>
       <ul>
         <li><router-link :to="{ name: 'index' }">Index</router-link></li>
@@ -12,7 +17,21 @@
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  import AuthService from '@/auth/AuthService'
+  const auth = new AuthService()
+  const { login, logout, authenticated } = auth
+
+  export default {
+    name: 'app',
+    data () {
+      return {
+        auth,
+        authenticated
+      }
+    },
+    methods: {
+      login,
+      logout
+    }
+  }
 </script>
