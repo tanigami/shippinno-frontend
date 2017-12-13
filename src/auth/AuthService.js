@@ -1,6 +1,8 @@
 import auth0 from 'auth0-js'
 
 export default class AuthService {
+  authenticated = this.isAuthenticated()
+
   constructor () {
     this.login = this.login.bind(this)
     this.setSession = this.setSession.bind(this)

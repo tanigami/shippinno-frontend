@@ -12,7 +12,8 @@
         <li><router-link :to="{ name: 'shipments-index' }">Shipments</router-link></li>
       </ul>
     </nav>
-    <router-view/>
+    <router-view :auth="auth" :authenticated="authenticated">
+    </router-view>
   </div>
 </template>
 

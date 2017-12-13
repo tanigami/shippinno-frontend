@@ -5,6 +5,7 @@
 </template>
 
 <script>
+  import auth from '@/auth/AuthService'
   export default {
     name: 'callback',
     props: ['auth'],

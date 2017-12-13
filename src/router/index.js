@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/pages/index'
 import OrdersIndex from '@/pages/orders/index'
 import ShipmentsIndex from '@/pages/shipments/index'
+import AuthCallback from '@/pages/auth/callback'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/shipments',
       name: 'shipments-index',
       component: ShipmentsIndex
+    },
+    {
+      path: '/auth/callback',
+      name: 'auth-callback',
+      component: AuthCallback
     }
   ]
 })
